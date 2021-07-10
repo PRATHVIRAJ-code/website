@@ -1,6 +1,6 @@
 FROM ubuntu
 RUN apt-get update
-RUN sudo -y install httpd
+RUN systemctl status apache2
 ADD . /var/www/html
-ENTRYPOINT /usr/sbin/httpd -D FOREGROUND
+ENTRYPOINT apachectl -D FOREGROUND
 ENV name PRATHVI_DOCKER 
